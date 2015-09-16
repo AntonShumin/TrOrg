@@ -18,12 +18,12 @@ curl_close($ch);
 
 //decode to php array
 
-
+$utccurr = time();
 $data = (json_decode($result, true));
 //echo "<pre>";
 //print_r ($data);
 //echo "</pre>";
-$con=mysqli_connect();
+$con=mysqli_connect('SERVER', 'USER', 'PW', 'DB');
 
 //Output any connection error
 if (mysqli_connect_errno())
@@ -57,7 +57,7 @@ Foreach ($data['data'] as $key => $org) {
 	$last_scrape_date = $org['last_scrape_date'];
  //insert into mysql table
   if (!mysqli_query($con,"INSERT INTO organizations_rsi_info (sid, title, logo, member_count, archetype, roleplay, lang, primary_focus, primary_image, secondary_focus, secondary_image, banner, headline, history, manifesto, charter, cover_image, cover_video, scrape_date)
-	VALUES ('".$sid."', '".$title."', '".$logo."', '".$member_count."', '".$archetype."', '".$roleplay."', '".$lang."', '".$primary_focus."', '".$primary_image."', '".$secondary_focus."', '".$secondary_image."', '".$banner."', '".$headline."', '".$history."', '".$manifesto."', '".$charter."', '".$cover_image."', '".$cover_video."', '".$last_scrape_date."')"))
+	VALUES ('".$sid."', '".$title."', '".$logo."', '".$member_count."', '".$archetype."', '".$roleplay."', '".$lang."', '".$primary_focus."', '".$primary_image."', '".$secondary_focus."', '".$secondary_image."', '".$banner."', '".$headline."', '".$history."', '".$manifesto."', '".$charter."', '".$cover_image."', '".$cover_video."', '".$utccurr."')"))
 {
 	echo("Error description: " . mysqli_error($con));
 }
