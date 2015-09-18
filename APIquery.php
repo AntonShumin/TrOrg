@@ -1,8 +1,8 @@
 <?php 
-$sqlserver = "";
-$username = "";
-$password = "";
-$password = "";
+$sqlserver = '';
+$username = '';
+$password = '';
+$database = '';
 
 
 $url = "http://sc-api.com/?api_source=live&system=organizations&action=all_organizations&source=rsi&start_page=1&end_page=1&items_per_page=255&sort_method=size&sort_direction=descending&expedite=0&format=pretty_json";
