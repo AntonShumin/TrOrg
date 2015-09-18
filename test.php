@@ -14,7 +14,7 @@ $database = '';
 //print gmdate("Y-m-d H:i:s") . "<br> testing <br>";
 //$utccurr = time() - (1 * 24 * 60 *60); 
 //echo $utccurr;
- $mysqli = new mysqli($sqlserver, $username, $password, 'orgtracker');
+ $mysqli = new mysqli($sqlserver, $username, $password, $database);
 
 //Output any connection error
 if ($mysqli->connect_error) {
